@@ -1,0 +1,16 @@
+<h2><%= "Welcome to the #{@nation}" %></h2>
+<h3><%= "Nation Members: #{@members.count}" %>
+
+
+<div id="members">
+  <% @members[0..24].each do |member| %>
+    <div id="member-<%= member.name %>">
+      <%= "Name: #{member.name}" %><br>
+      <img src=<%= member.photo_url %>><br>
+      <%= "Allies: #{member.allies.join("\ ")}" %><br>
+      <%= "Enemies: #{member.enemies.join("\ ")}" %><br>
+      <%= "Affiliations: #{member.affiliation}" %><br>
+      <h4>---------------------------------------</h4><br>
+    </div>
+  <% end %>
+</div>

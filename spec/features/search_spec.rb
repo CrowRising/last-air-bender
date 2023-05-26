@@ -22,27 +22,20 @@ RSpec.describe 'search_results_page' do
       click_on 'Search of Members'
 
       expect(current_path).to eq(search_path)
+      expect(page).to have_content("Nation Members: 97")
 
-      expect(page).to have_content("There are 20 members of the Fire Nation")
-      expect(page).to have_css('.member', count:20)
+      within '#members' do
+        expect(page).to have_css("member-Afiko ~ #member-Azula")
+        expect(page).to have_css("member-Azulon ~ #member--Bujing")
+        expect(page).to have_css("member--Chey~ #member-Druk")
+      end
 
-      within(first('.member')) do
-        within('.name') do
-          expect(page).to have_content('Afiko')
-        end
-        within('.allies') do
-          expect(page).to have_content("Fire Nation")
-        end
-        within('.enemies') do
-          expect(page).to have_content("Aang")
-        end
-        within('.photo') do
-          expect(page).to have_content("img[src*='https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128']")
-          
-        end
-        within('.affliation') do
-          expect(page).to have_content("Afiko")
-        end
+      within '#member-Afiko' do
+        expect(page).to have_content('Name: Afiko')
+        expect(page).to have_content("Allies: Fire Nation")
+        expect(page).to have_content("Enemies: Aang")
+        expect(page).to have_content("img[src*='https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128']")
+        expect(page).to have_content("Affliations: Afiko")
       end
     end
   end
