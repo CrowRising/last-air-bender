@@ -35,7 +35,7 @@ RSpec.describe 'search_results_page' do
         expect(page).to have_content("Allies: Fire Nation")
         expect(page).to have_content("Enemies: Aang")
         expect(page).to have_content("img[src*='https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128']")
-        expect(page).to have_content("Affliations: Afiko")
+        expect(page).to have_content("Affiliations: Afiko")
       end
     end
   end
