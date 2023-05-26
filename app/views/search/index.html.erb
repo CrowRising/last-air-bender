@@ -9,8 +9,9 @@
       <img src=<%= member.photo_url %>><br>
       <%= "Allies: #{member.allies.join("\ ")}" %><br>
       <%= "Enemies: #{member.enemies.join("\ ")}" %><br>
+      <%= image_tag("#{member.photo}") %><br>
       <%= "Affiliations: #{member.affiliation}" %><br>
-      <h4>---------------------------------------</h4><br>
+  
     </div>
   <% end %>
 </div>

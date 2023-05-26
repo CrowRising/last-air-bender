@@ -19,7 +19,7 @@ RSpec.describe 'search_results_page' do
       visit '/'
 
       select 'Fire Nation', from: :nation
-      click_on 'Search of Members'
+      click_on 'Search For Members'
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content("Nation Members: 97")
