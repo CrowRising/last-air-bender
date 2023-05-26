@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def element_nation
-  [
-    ['Air Nomads', 'air+nomads'],
-    ['Earth Kingdom', 'earth+kingdom'],
-    ['Fire Nation', 'fire+nation'],
-    ['Water Tribes', 'water+tribes'],
-  ]
+    [
+      ['Air Nomads', 'air+nomads'],
+      ['Earth Kingdom', 'earth+kingdom'],
+      ['Fire Nation', 'fire+nation'],
+      ['Water Tribes', 'water+tribes']
+    ]
   end
 end
